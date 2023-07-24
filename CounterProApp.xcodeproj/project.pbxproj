@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		0CB9B5432A6AC19600DBC145 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9B5422A6AC19600DBC145 /* AppDelegate.swift */; };
 		0CB9B5452A6AC19600DBC145 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9B5442A6AC19600DBC145 /* SceneDelegate.swift */; };
-		0CB9B5472A6AC19600DBC145 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9B5462A6AC19600DBC145 /* ViewController.swift */; };
+		0CB9B5472A6AC19600DBC145 /* CounterProAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9B5462A6AC19600DBC145 /* CounterProAppViewController.swift */; };
 		0CB9B54A2A6AC19600DBC145 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB9B5482A6AC19600DBC145 /* Main.storyboard */; };
 		0CB9B54C2A6AC19700DBC145 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0CB9B54B2A6AC19700DBC145 /* Assets.xcassets */; };
 		0CB9B54F2A6AC19700DBC145 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0CB9B54D2A6AC19700DBC145 /* LaunchScreen.storyboard */; };
+		0CB9B55A2A6AC1E200DBC145 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9B5592A6AC1E200DBC145 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0CB9B53F2A6AC19600DBC145 /* CounterProApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CounterProApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0CB9B5422A6AC19600DBC145 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0CB9B5442A6AC19600DBC145 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0CB9B5462A6AC19600DBC145 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0CB9B5462A6AC19600DBC145 /* CounterProAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterProAppViewController.swift; sourceTree = "<group>"; };
 		0CB9B5492A6AC19600DBC145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0CB9B54B2A6AC19700DBC145 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0CB9B54E2A6AC19700DBC145 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0CB9B5502A6AC19700DBC145 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CB9B5592A6AC1E200DBC145 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,40 @@
 		0CB9B5412A6AC19600DBC145 /* CounterProApp */ = {
 			isa = PBXGroup;
 			children = (
+				0CB9B5582A6AC1BC00DBC145 /* Presentation */,
+				0CB9B5572A6AC1AF00DBC145 /* Resources */,
+				0CB9B5562A6AC1A500DBC145 /* Helpers */,
 				0CB9B5422A6AC19600DBC145 /* AppDelegate.swift */,
 				0CB9B5442A6AC19600DBC145 /* SceneDelegate.swift */,
-				0CB9B5462A6AC19600DBC145 /* ViewController.swift */,
-				0CB9B5482A6AC19600DBC145 /* Main.storyboard */,
+			);
+			path = CounterProApp;
+			sourceTree = "<group>";
+		};
+		0CB9B5562A6AC1A500DBC145 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0CB9B5592A6AC1E200DBC145 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0CB9B5572A6AC1AF00DBC145 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				0CB9B54B2A6AC19700DBC145 /* Assets.xcassets */,
 				0CB9B54D2A6AC19700DBC145 /* LaunchScreen.storyboard */,
 				0CB9B5502A6AC19700DBC145 /* Info.plist */,
 			);
-			path = CounterProApp;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		0CB9B5582A6AC1BC00DBC145 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				0CB9B5462A6AC19600DBC145 /* CounterProAppViewController.swift */,
+				0CB9B5482A6AC19600DBC145 /* Main.storyboard */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0CB9B5472A6AC19600DBC145 /* ViewController.swift in Sources */,
+				0CB9B5472A6AC19600DBC145 /* CounterProAppViewController.swift in Sources */,
 				0CB9B5432A6AC19600DBC145 /* AppDelegate.swift in Sources */,
 				0CB9B5452A6AC19600DBC145 /* SceneDelegate.swift in Sources */,
+				0CB9B55A2A6AC1E200DBC145 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CounterProApp/Info.plist;
+				INFOPLIST_FILE = CounterProApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -315,7 +343,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = CounterProApp/Info.plist;
+				INFOPLIST_FILE = CounterProApp/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

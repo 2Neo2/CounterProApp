@@ -25,7 +25,7 @@ class CounterProAppViewController: UIViewController {
     
     private var dateFormatter = DateFormatter()
     
-    // MARK: Calculated propertie for current date and time.
+    // MARK: Calculated property for current date and time.
     private var getCurrentTime: String {
         get {
             let currentDate = Date()

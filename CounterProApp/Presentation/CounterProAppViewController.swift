@@ -7,7 +7,6 @@
 
 import UIKit
 
-// TODO: Finish formatting the date and time.
 class CounterProAppViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView!
@@ -24,6 +23,16 @@ class CounterProAppViewController: UIViewController {
     
     private var counter: Int = 0
     
+    private var dateFormatter = DateFormatter()
+    
+    // MARK: Calculated propertie for current date and time.
+    private var getCurrentTime: String {
+        get {
+            let currentDate = Date()
+            return dateFormatter.string(from: currentDate)
+        }
+    }
+    
     private var info: String = "История изменений: \n"
     
     override func viewDidLoad() {
@@ -32,7 +41,6 @@ class CounterProAppViewController: UIViewController {
         setupView()
         setupConstraints()
     }
-    
     
     private func setupView() {
         // MARK: Setup backgound view.
@@ -50,7 +58,6 @@ class CounterProAppViewController: UIViewController {
         
         // MARK: Setup increase button.
         increaseCounterButton.translatesAutoresizingMaskIntoConstraints = false
-        increaseCounterButton.setTitle("+", for: .normal)
         increaseCounterButton.backgroundColor = .black
         increaseCounterButton.tintColor = .white
         increaseCounterButton.layer.cornerRadius = 25
@@ -58,7 +65,6 @@ class CounterProAppViewController: UIViewController {
         
         // MARK: Setup decrease button.
         decreaseCounterButton.translatesAutoresizingMaskIntoConstraints = false
-        decreaseCounterButton.setTitle("-", for: .normal)
         decreaseCounterButton.backgroundColor = .black
         decreaseCounterButton.tintColor = .white
         decreaseCounterButton.layer.cornerRadius = 25
@@ -78,6 +84,10 @@ class CounterProAppViewController: UIViewController {
         infoTextView.translatesAutoresizingMaskIntoConstraints = false
         infoTextView.font = infoTextView.font?.withSize(20)
         
+        // MARK: Setup date formatter.
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .medium
+        dateFormatter.locale = .current
     }
     
     private func setupConstraints() {
@@ -126,7 +136,7 @@ class CounterProAppViewController: UIViewController {
 
     @IBAction func increaseButtonTapped(_ sender: Any) {
         counter += 1
-        info += "\n: значение изменено на +1."
+        info += "\n\(getCurrentTime): значение изменено на +1."
         counterLabel.text = "Значение счетчика: \(counter)"
         infoTextView.text = info
     }
@@ -134,19 +144,18 @@ class CounterProAppViewController: UIViewController {
     @IBAction func decreaseButtonTapped(_ sender: Any) {
         if (counter > 0) {
             counter -= 1
-            info += "\n: значение изменено на -1."
+            info += "\n\(getCurrentTime): значение изменено на -1."
         } else {
-            info += "\n: попытка уменьшить значение счетчика ниже 0."
+            info += "\n\(getCurrentTime): попытка уменьшить значение счетчика ниже 0."
         }
         
         counterLabel.text = "Значение счетчика: \(counter)"
         infoTextView.text = info
     }
     
-    
     @IBAction func resetButtonTapped(_ sender: Any) {
         counter = 0
-        info += "\n: значение сброшено."
+        info += "\n\(getCurrentTime): значение сброшено."
         infoTextView.text = info
         counterLabel.text = "Значение счетчика: \(counter)"
     }

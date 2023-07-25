@@ -8,7 +8,6 @@
 import UIKit
 
 class CounterProAppViewController: UIViewController {
-
     @IBOutlet weak var backgroundView: UIView!
     
     @IBOutlet weak var counterLabel: UILabel!
@@ -37,7 +36,6 @@ class CounterProAppViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         setupView()
         setupConstraints()
     }
@@ -59,14 +57,14 @@ class CounterProAppViewController: UIViewController {
         // MARK: Setup increase button.
         increaseCounterButton.translatesAutoresizingMaskIntoConstraints = false
         increaseCounterButton.backgroundColor = .black
-        increaseCounterButton.tintColor = .white
+        increaseCounterButton.imageView?.tintColor = .red
         increaseCounterButton.layer.cornerRadius = 25
         increaseCounterButton.titleLabel?.font = .systemFont(ofSize: 25)
         
         // MARK: Setup decrease button.
         decreaseCounterButton.translatesAutoresizingMaskIntoConstraints = false
-        decreaseCounterButton.backgroundColor = .black
-        decreaseCounterButton.tintColor = .white
+        decreaseCounterButton.backgroundColor = .darkGray
+        decreaseCounterButton.imageView?.tintColor = .blue
         decreaseCounterButton.layer.cornerRadius = 25
         decreaseCounterButton.titleLabel?.font = .systemFont(ofSize: 20)
         
@@ -135,6 +133,10 @@ class CounterProAppViewController: UIViewController {
     
 
     @IBAction func increaseButtonTapped(_ sender: Any) {
+        increaseButtonTapped()
+    }
+    
+    private func increaseButtonTapped() {
         counter += 1
         info += "\n\(getCurrentTime): значение изменено на +1."
         counterLabel.text = "Значение счетчика: \(counter)"
@@ -142,6 +144,10 @@ class CounterProAppViewController: UIViewController {
     }
     
     @IBAction func decreaseButtonTapped(_ sender: Any) {
+        decreaseButtonTapped()
+    }
+    
+    private func decreaseButtonTapped() {
         if (counter > 0) {
             counter -= 1
             info += "\n\(getCurrentTime): значение изменено на -1."
@@ -154,6 +160,10 @@ class CounterProAppViewController: UIViewController {
     }
     
     @IBAction func resetButtonTapped(_ sender: Any) {
+        resetButtonTapped()
+    }
+    
+    private func resetButtonTapped() {
         counter = 0
         info += "\n\(getCurrentTime): значение сброшено."
         infoTextView.text = info
